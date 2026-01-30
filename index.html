@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Sorry</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    }
+
+    .card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      color: #e63946;
+      margin-bottom: 15px;
+      font-size: 2.2rem;
+    }
+
+    p {
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .heart {
+      font-size: 3rem;
+      animation: beat 1.2s infinite;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: #e63946;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    button:hover {
+      background: #d62839;
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      color: #2a9d8f;
+      font-weight: 600;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart">❤️</div>
+    <h1>I'm Really Sorry</h1>
+    <p>
+      I know I made a mistake, and I truly regret it.
+      Please believe me when I say that you mean a lot to me,
+      and I never wanted to hurt you.
+    </p>
+    <button onclick="showMessage()">Please Forgive Me</button>
+    <div id="msg" class="hidden">Thank you for giving me a chance 💖</div>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('msg').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
